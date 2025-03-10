@@ -1,0 +1,316 @@
+<div class="profile-container">
+
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()" class="back-button" />
+        <div class="title-container">
+            <h1>Your <span class="highlight">Profile</span></h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+        </div>
+        <img src="assets/icons/setting-icon.png" alt="setting-icon" class="header-icon" />
+    </div>
+
+
+    <!-- Profile Info Card -->
+    <div class="profile-card-wrapper">
+        <div class="profile-card">
+            <div class="profile-left">
+                <img [src]="userProfileImg" alt="" class="name-logo">
+                <div class="name">{{name}}</div>
+            </div>
+
+            <div class="profile-divider"></div>
+
+            <div class="profile-right">
+                <div class="bits-section">
+                    <h3 class="bits-title">Bits about you! <span class="arrow">&rarr;</span></h3>
+                    <div class="profile-details">
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <span class="material-icons">email</span>
+                                <span class="detail-value">{{email}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="material-icons">event</span>
+                                <a href="#" class="detail-link">Enter your Date of Birth</a>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <span class="material-icons">phone</span>
+                                <a href="#" class="detail-link">Enter your phone number</a>
+                            </div>
+                            <div class="detail-item">
+                                <span class="material-icons">person</span>
+                                <a href="#" class="detail-link">Enter your Gender</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-section">
+                    <a href="#" class="edit-link">Edit <span class="edit-arrow">&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- More About You Section -->
+    <div class="more-about-section">
+        <h2 class="section-header">
+            <span class="line"></span>
+            More about you!
+            <span class="line"></span>
+        </h2>
+
+        <div class="form-section">
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">public</span>
+                        </span>
+                        <span class="label-number">1.</span>
+                        <span class="label-text">What's your job <span class="highlight-orange">country</span>?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">map</span>
+                        </span>
+                        <span class="label-number">2.</span>
+                        <span class="label-text">What's your <span class="highlight-orange">state</span>?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">location_city</span>
+                        </span>
+                        <span class="label-number">3.</span>
+                        <span class="label-text">What's your <span class="highlight-orange">city</span>?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">person</span>
+                        </span>
+                        <span class="label-number">4.</span>
+                        <span class="label-text">Are you a ....</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="userType" value="student">
+                            <span>Student</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="userType" value="employee">
+                            <span>Employee</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="userType" value="tpo">
+                            <span>TPO</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">public</span>
+                        </span>
+                        <span class="label-number">5.</span>
+                        <span class="label-text">Which <span class="highlight-orange">country</span> is your college
+                            in?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">map</span>
+                        </span>
+                        <span class="label-number">6.</span>
+                        <span class="label-text">Which <span class="highlight-orange">state</span> is your college
+                            in?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">location_city</span>
+                        </span>
+                        <span class="label-number">7.</span>
+                        <span class="label-text">Which <span class="highlight-orange">city</span> is your college
+                            in?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">school</span>
+                        </span>
+                        <span class="label-number">8.</span>
+                        <span class="label-text">What <span class="highlight-orange">college</span> do you
+                            attend?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">school</span>
+                        </span>
+                        <span class="label-number">9.</span>
+                        <span class="label-text">What <span class="highlight-orange">degree or program</span> are you
+                            pursuing?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">menu_book</span>
+                        </span>
+                        <span class="label-number">10.</span>
+                        <span class="label-text">Which <span class="highlight-orange">stream or major</span> are you
+                            focusing on?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle">
+                            <span class="material-icons">school</span>
+                        </span>
+                        <span class="label-number">11.</span>
+                        <span class="label-text">What is your <span class="highlight-orange">graduation
+                                year</span>?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">card_giftcard</span>
+                        </span>
+                        <span class="label-number">12.</span>
+                        <span class="label-text">Enter your <span class="highlight-orange">referral code.</span></span>
+                    </label>
+                    <div class="referral-input">
+                        <input type="text" placeholder="Type your referral code here">
+                        <button class="verify-button">Verify</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 7 -->
+            <div class="form-row part-of-row">
+                <div class="form-group part-of-group">
+                    <label class="form-label">
+                        <span class="icon-circle blue">
+                            <span class="material-icons">groups</span>
+                        </span>
+                        <span class="label-number">13.</span>
+                        <span class="label-text">I am <span class="highlight-orange">part of</span>?</span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="form-select">
+                            <option selected disabled>Choose from the list</option>
+                        </select>
+                        <span class="material-icons dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="save-button-container">
+            <button class="save-button">
+                Save
+                <span class="material-icons">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</div>

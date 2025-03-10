@@ -1,0 +1,125 @@
+<div class="view-all-jobs-container">
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()" class="back-button" />
+        <div class="title-container">
+            <h1>Placement Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+            <h2>{{ title | uppercase }}</h2>
+        </div>
+        <img src="assets/icons/job-icon.png" alt="Category Icon" class="header-icon" />
+    </div>
+    <div class="jobs-container">
+        <!-- Tab Navigation -->
+        <div class="tabs-container">
+            <div *ngFor="let tab of tabs; let i = index" class="tab" [class.active]="selectedTab === i"
+                (click)="selectTab(i)">
+                <span>{{ tab }}</span>
+                <div class="underline" *ngIf="selectedTab === i"></div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <!-- Job Listings Column -->
+            <div class="jobs-list">
+                <!-- Job Card -->
+                <div class="job-card" *ngFor="let job of jobs" (click)="selectJob(job)"
+                    [class.active]="selectedJob?.id === job.id" [ngClass]="{ 'inactive': selectedJob?.id !== job.id }">
+
+                    <div class="job-card-header">
+                        <img [src]="job.companyLogo" [alt]="job.companyName" class="company-logo">
+
+                        <div class="job-info">
+                            <h3 class="job-title">{{job.title}}</h3>
+                            <p class="company-name">{{job.companyName}}</p>
+                            <p class="location">{{job.location}}</p>
+                            <div class="key-skills">
+                                Key Skills:
+                                <ng-container *ngFor="let skill of job.keySkills; let last = last">
+                                    <a class="skill-link">{{skill}}</a>{{!last ? ', ' : ''}}
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="time-posted">{{ job.timePosted }}</div>
+
+                    <div class="explore-link">
+                        Explore
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+
+                    <!-- Orange indicator for active job on mobile -->
+                    <div class="orange-indicator" *ngIf="selectedJob?.id === job.id && isMobile"></div>
+                </div>
+
+            </div>
+
+            <!-- Job Details Panel (Desktop) -->
+            <div class="job-details" *ngIf="selectedJob">
+                <div class="job-details-header">
+                    <img [src]="selectedJob.companyLogo" [alt]="selectedJob.companyName" class="company-logo">
+                    <h2 class="company-name">{{selectedJob.companyName}}</h2>
+                </div>
+
+                <h1 class="job-title">{{selectedJob.title}}</h1>
+                <p class="location">{{selectedJob.location}}</p>
+
+                <div class="key-skills">
+                    Key Skills:
+                    <ng-container *ngFor="let skill of selectedJob.keySkills; let last = last">
+                        <a href="#" class="skill-link">{{skill}}</a>{{!last ? ', ' : ''}}
+                    </ng-container>
+                </div>
+
+                <button class="apply-button">
+                    Apply
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <div class="job-description">
+                    <h3>About this job</h3>
+                    <p>{{selectedJob.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-overlay" *ngIf="showMobileJobDetails"></div>
+    <!-- Mobile Job Details Overlay -->
+    <div class="mobile-job-details-overlay" [class.active]="showMobileJobDetails && selectedJob && isMobile">
+        <button class="close-button" (click)="closeMobileJobDetails()">×</button>
+
+        <div class="job-details-content" *ngIf="selectedJob">
+            <div class="job-details-header">
+                <img [src]="selectedJob.companyLogo" [alt]="selectedJob.companyName" class="company-logo">
+                <h2 class="company-name">{{selectedJob.companyName}}</h2>
+            </div>
+
+            <h1 class="job-title">{{selectedJob.title}}</h1>
+            <p class="location">{{selectedJob.location}}</p>
+
+            <div class="key-skills">
+                Key Skills:
+                <ng-container *ngFor="let skill of selectedJob.keySkills; let last = last">
+                    <a class="skill-link">{{skill}}</a>{{!last ? ', ' : ''}}
+                </ng-container>
+            </div>
+
+            <button class="apply-button">
+                Apply
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <div class="job-description">
+                <h3>About this job</h3>
+                <p>{{selectedJob.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

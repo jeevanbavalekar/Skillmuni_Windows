@@ -1,0 +1,254 @@
+/* performance-dashboard.component.scss */
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #c9d4ff, #f5f7fb);
+  margin-top: -25px;
+  display: flex; /* Added flex display */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.performance-section {
+  background-color: #ffffff;
+  width: 80%;
+  max-width: 1200px; /* Added max-width for better appearance on large screens */
+  box-sizing: border-box;
+  padding: 0 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #2f2854;
+}
+
+.heading-section {
+  background: url("/assets/graph-bg.png") no-repeat center center;
+  background-size: cover;
+  background-color: #e7ecff;
+  padding: 20px 0;
+  position: relative;
+  min-height: 200px;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #34437a;
+  white-space: nowrap;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #f7931e;
+}
+
+.profile-card {
+  background: #ffffff;
+  width: 280px;
+  margin: 20px auto;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  background: #34437a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  color: #34437a;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.profile-level {
+  color: #f7931e;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px 0 0 0;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.stat-divider {
+  width: 80%;
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+}
+
+.stat-card span {
+  color: #f7931e;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #34437a;
+  margin: 5px 0 0 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px 15px;
+  border-radius: 10px;
+  width: 140px;
+  height: 120px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #f0f4ff;
+}
+
+.action-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.action-button p {
+  font-size: 14px;
+  color: #34437a;
+  text-align: center;
+  margin: 5px 0 0 0;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .performance-section {
+    width: 90%; /* Increased width on smaller screens */
+  }
+
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .action-buttons {
+    gap: 10px;
+  }
+
+  .action-button {
+    width: calc(50% - 15px);
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-section {
+    width: 95%; /* Even more width on mobile screens */
+  }
+
+  .profile-card {
+    width: 85%;
+  }
+
+  .action-button {
+    width: calc(50% - 10px);
+    padding: 15px 10px;
+    height: 110px;
+  }
+
+  .action-icon {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,118 @@
+<div class="placement-zone-container">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" routerLink="/home" class="back-button" />
+        <div class="title-container">
+            <h1>Placement Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+        </div>
+        <img src="assets/icons/job-icon.png" alt="World Icon" class="header-icon" />
+    </div>
+
+    <div class="career-sections">
+        <div class="section career-prep">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Career <span class="highlight">Prep</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="career-cards">
+                <div class="card" routerLink="/your-job-profile">
+                    <div class="content">
+                        <div class="text-content">
+                            <h4>STEP 1</h4>
+                            <h5>YOUR JOB PROFILE</h5>
+                            <p class="career-card-text desktop-text">For suggestions that are personalized to your
+                                needs.</p>
+                            <p class="career-card-text mobile-text">Personalized suggestions just for you!</p>
+
+                        </div>
+                        <div class="icon-container">
+                            <img src="assets/icons/categories-icon.png" alt="Career Evaluation Icon" />
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <span class="explore-text">Add it &nbsp;<i class="material-icons arrow"
+                                style="cursor: pointer;">east</i></span>
+                    </div>
+                </div>
+
+                <div class="card" routerLink="/career-evaluation">
+                    <div class="content">
+                        <div class="text-content">
+                            <h4>STEP 2</h4>
+                            <h5>YOUR CAREER EVALUATION</h5>
+                            <p class="career-card-text desktop-text">Understanding your strengths and weaknesses can
+                                help you get a
+                                great job and have a
+                                successful career.</p>
+                            <p class="career-card-text mobile-text">For assessing yourself</p>
+
+                        </div>
+                        <div class="icon-container sheet-img">
+                            <img src="assets/icons/career-sheet-icon.png" alt="Career Evaluation Icon" />
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <span class="explore-text">Evaluate &nbsp;<i class="material-icons arrow"
+                                style="cursor: pointer;">east</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section career-opportunities">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Career <span class="highlight">Opportunities</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="career-opportunities-cards">
+                <div class="opportunity-card" routerLink="/career-fest">
+                    <div class="content">
+                        <div class="icon-container">
+                            <img src="assets/cards/career-card.png" alt="Career Fest Icon" />
+                        </div>
+                        <div class="text-content">
+                            <h5>CAREER FEST</h5>
+                            <p class="opportunities-card-text">Discover exciting career opportunities at college career
+                                fests.</p>
+                        </div>
+                    </div>
+                    <div class="opportunity-explore">
+                        <span class="explore-text">Explore &nbsp;<i class="material-icons arrow"
+                                style="cursor: pointer;">east</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View All Jobs -->
+    <div class="view-all-jobs" style="cursor: pointer;">
+        <div class="view-all-job-content" routerLink="/view-all-jobs">
+            <div class="view-all-job-icon">
+                <img src="assets/icons/view-all-icon.png" alt="View All Icon">
+            </div>
+            <span class="view-all-text">VIEW ALL JOBS</span>
+            <span class="explore-text">Explore &nbsp;<i class="material-icons arrow">east</i></span>
+        </div>
+    </div>
+
+
+    <!-- Industry Wise Jobs -->
+    <div class="industry-jobs">
+        <h3 class=" industry-jobs-title">VIEW INDUSTRY-WISE JOBS</h3>
+        <div class="job-list">
+            <div *ngFor="let job of jobCategories" class="job-card">
+                <div class="job-icon">
+                    <img [src]="job.icon" alt="{{ job.name }}">
+                </div>
+                <h4 class="job-name">{{ job.name }}</h4>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,76 @@
+<div class="skill-zone-container">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()"  class="back-button" />
+        <div class="title-container">
+            <h1>Skill Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+        </div>
+        <img src="assets/icons/setting-icon.png" alt="setting-icon" class="header-icon" />
+    </div>
+
+    <!-- Learn and Play Section -->
+    <div class="play-section">
+        <div class="play-section-header">
+            <h2 class="play-section-title">
+                Learn and <span class="play-highlight">Play</span>
+            </h2>
+            <div class="play-section-line"></div>
+            <div class="play-card-stats" id="main-score-board" *ngIf="!isMobileView">
+                <p class="play-card-solved">
+                    <img src="assets/icons/bulb-icon.png" alt="">6
+                    <span style="color: #f7931e;">/1106 SOLVED</span>
+                </p>
+                <p class="play-card-goals">
+                    <img src="assets/icons/credits-icon.png" alt="">45
+                    <span style="color: #f7931e;">CREDITS</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="play-card-stats" id="main-score-board" *ngIf="isMobileView" style="margin: auto; width: 300px;padding: 5px;margin-top: 10px;">
+            <p class="play-card-solved">
+                <img src="assets/icons/bulb-icon.png" alt="">6
+                <span style="color: #f7931e;">/1106 SOLVED</span>
+            </p>
+            <p class="play-card-goals">
+                <img src="assets/icons/credits-icon.png" alt="">45
+                <span style="color: #f7931e;">CREDITS</span>
+            </p>
+        </div>
+
+        <div class="play-card-container">
+            <div class="play-card" *ngFor="let card of skillZoneCards" (click)="navigateToCategory(card)">
+                <div class="play-card-content">
+                    <img [src]="card.image" alt="{{ card.title }}" class="play-card-image-left" />
+                    <div class="play-card-details">
+                        <p class="play-card-title">{{ card.title | uppercase }}</p>
+                        <div class="horizontal-line"></div>
+                        <div class="play-card-stats">
+                            <p class="play-card-solved">
+                                <img src="assets/icons/bulb-icon.png" alt=""> {{ card.solved }}
+                                <span style="color: #f7931e;">SOLVED</span>
+                            </p>
+                            <p class="play-card-goals">
+                                <img src="assets/icons/credits-icon.png" alt=""> {{ card.credits }}
+                                <span style="color: #f7931e;">CREDITS</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Card -->
+            <div class="play-card coming-soon-card">
+                <img src="assets/icons/coming-soon.png" alt="Coming Soon" class="coming-soon-image" />
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container" *ngIf="showAd">
+        <div class="ad">
+            AD PLACEHOLDER
+            <span class="ad-close" (click)="hideAd()">✕</span>
+        </div>
+    </div>
+</div>

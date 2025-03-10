@@ -1,0 +1,21 @@
+<div class="zone-container">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" class="back-button" (click)="onBackClick()" />
+        <div class="title-container">
+            <h1>{{ zoneTitle }}</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+            <h2>{{ subtitle }}</h2>
+        </div>
+        <img src="assets/icons/sheet-icon.png" alt="Sheet Icon" class="header-icon" />
+    </div>
+
+    <!-- Card Content -->
+    <div class="card-container">
+        <div class="title">{{ cardTitle }}</div>
+        <img [src]="imageUrl" alt="{{ cardTitle }}">
+        <div class="content">
+            <span>{{ description }}</span>
+        </div>
+    </div>
+</div>

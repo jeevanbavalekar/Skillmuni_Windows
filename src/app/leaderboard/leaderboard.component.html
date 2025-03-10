@@ -1,0 +1,68 @@
+<div class="leaderboard-container">
+    <!-- Header -->
+    <div class="heading">
+        <div class="section-header">
+            <div class="section-line"></div> <!-- Horizontal line in the same row -->
+            <h2 class="section-title">
+                My Rank In
+            </h2>
+            <div class="section-line"></div> <!-- Horizontal line in the same row -->
+        </div>
+
+        <div class="tabs-container">
+            <div *ngFor="let tab of tabs; let i = index" class="tab" [class.active]="selectedTab === i"
+                (click)="selectTab(i)">
+                <span>{{ tab }}</span>
+                <div class="underline" *ngIf="selectedTab === i"></div>
+            </div>
+        </div>
+
+
+        <!-- Profile & Ranking Section -->
+        <div class="profile-rank">
+            <!-- Profile Section -->
+            <div class="profile">
+                <img [src]="userProfileImg" alt="" class="name-logo">
+                <p class="username">{{ name }}</p>
+            </div>
+
+            <!-- Ranking Section -->
+            <div class="ranking">
+                <div class="rank-header">
+                    <span class="banner">GRADUATE LEVEL</span>
+                </div>
+                <div class="badge">
+                    <img src="assets/icons/badge-gold.png" alt="Gold badge">
+                    <img src="assets/icons/badge-silver.png" alt="Silver badge">
+                    <img src="assets/icons/badge-bronze.png" alt="Bronze badge">
+                </div>
+                <div class="points">
+                    <span>0</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaderboard Table -->
+    <div class="leaderboard-table">
+        <!-- Leaderboard Header -->
+        <div class="leaderboard-header">
+            <div class="header-item rank">RANK</div>
+            <div class="header-item name">NAME</div>
+            <div class="header-item icon"><img src="assets/icons/suit-icon.png" alt="Icon 1"></div>
+            <div class="header-item icon"><img src="assets/icons/stone-icon.png" alt="stone" alt="Icon 2"></div>
+            <div class="header-item icon"><img src="assets/icons/football-icon.png" alt="Icon 3"></div>
+        </div>
+
+        <!-- Leaderboard Rows -->
+        <div *ngFor="let user of users; let i = index" class="leaderboard-row" [class.highlight]="i === 2">
+            <div class="row-item rank">{{ user.rank }}.</div>
+            <div class="row-item name">{{ user.name }}</div>
+            <div class="row-item score">{{ user.score1 }}</div>
+            <div class="row-item score">{{ user.score2 }}</div>
+            <div class="row-item score">{{ user.score3 }}</div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="entrepreneur-zone-container" *ngIf="!showComingSoon">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" routerLink="/home" class="back-button" />
+        <div class="title-container">
+            <h1>Entrepreneur Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+        </div>
+        <img src="assets/icons/world-icon.png" alt="World Icon" class="header-icon" />
+    </div>
+
+    <!-- Section 1: Entrepreneurial Quotient -->
+    <div class="section Entrepreneur">
+        <div class="section-header">
+            <h2 class="section-title">
+                Check your <span class="highlight">Entrepreneur Quotient</span>
+            </h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="eq-banner" (click)="showComingSoonMessage()">
+            <div class="eq-content">
+                <img src="assets/cards/entrepreneurial-quotient.jpg" alt="Entrepreneurial Quotient" class="eq-image" />
+                <p class="eq-title">Are You Born to Lead? Find Out! <span>→</span></p>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="ad-container" *ngIf="showAd">
+        <div class="ad">
+            AD PLACEHOLDER
+            <span class="ad-close" (click)="hideAd()">✕</span>
+        </div>
+    </div>
+
+    <!-- Section 2: Opportunities -->
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Explore <span class="highlight">Opportunities</span></h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="card-container">
+            <div *ngFor="let card of opportunityCards" class="opportunity-card"
+                (click)="fetchBriefListWithAcademy(card.tileCode, card.title, card.id_academic_tile)">
+                <div class="card-content">
+                    <img class="opportunity-image" [src]="card.image" [alt]="card.title" />
+                    <div class="card-details">
+                        <p class="opportunity-title">{{ card.title }}</p>
+                        <p class="opportunity-description">{{ card.description }}</p>
+                        <div class="card-explore">
+                            <span class="explore-text">Explore →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Coming Soon Component -->
+<app-coming-soon *ngIf="showComingSoon" [zoneTitle]="comingSoonData.zoneTitle" [subtitle]="comingSoonData.subtitle"
+    [cardTitle]="comingSoonData.cardTitle" [imageUrl]="comingSoonData.imageUrl"
+    [description]="comingSoonData.description" (backClicked)="showComingSoon = false">
+</app-coming-soon>

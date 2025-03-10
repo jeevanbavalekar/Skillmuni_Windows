@@ -1,0 +1,70 @@
+<div class="dashboard-container">
+    <div class="performance-section">
+        <div class="heading-section">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2 class="section-title">My Performance</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-info">
+                    <div class="avatar-circle" *ngIf="!userProfileImg">
+                        <span>{{getInitials()}}</span>
+                    </div>
+                    <img *ngIf="userProfileImg" [src]="userProfileImg" alt="" class="avatar-circle">
+                    <h3>{{name}}</h3>
+                    <p class="profile-level">GRADUATE LEVEL</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <img src="assets/icons/coin-icon.png" alt="Credits">
+                <div class="stat-divider"></div>
+                <span>CREDITS</span>
+                <p>1000</p>
+            </div>
+
+            <div class="stat-card">
+                <img src="assets/icons/wallet-icon.png" alt="Wallet">
+                <div class="stat-divider"></div>
+                <span>WALLET</span>
+                <p>500</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <div class="action-button">
+                <div class="action-icon bookmark-icon">
+                    <img src="assets/icons/bookmark-icon.png" alt="Bookmark">
+                </div>
+                <p>View Bookmarked</p>
+            </div>
+
+            <div class="action-button">
+                <div class="action-icon gift-icon">
+                    <img src="assets/icons/gift-icon.png" alt="Rewards">
+                </div>
+                <p>View Available Rewards</p>
+            </div>
+
+            <div class="action-button">
+                <div class="action-icon star-icon">
+                    <img src="assets/icons/star-icon.png" alt="Assessment">
+                </div>
+                <p>Assessment Score</p>
+            </div>
+
+            <div class="action-button">
+                <div class="action-icon coupon-icon">
+                    <img src="assets/icons/coupon-icon.png" alt="Redeemed">
+                </div>
+                <p>Rewards Redeemed</p>
+            </div>
+        </div>
+    </div>
+</div>

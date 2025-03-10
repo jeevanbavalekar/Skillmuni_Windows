@@ -1,0 +1,100 @@
+.career-evaluation-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px 0;
+  background: linear-gradient(to right, #d2dbff, #f7f9ff, #e7ecff);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 85px;
+  margin-top: -20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #34437a;
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 15px;
+  color: #34437a;
+  margin: 0;
+}
+
+.long-arrow {
+  width: 160px;
+}
+
+.header-icon {
+  max-width: 80px;
+}
+
+.back-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Career Fest Image Container */
+.career-evaluation-image-container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Center the Image */
+.career-evaluation-image {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Floating Text Box */
+.career-evaluation-text {
+  position: absolute;
+  bottom: 30px;
+  background: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #34437a;
+  width: 35%;
+  border: 1px solid#2F2854;
+}
+
+@media (max-width: 768px) {
+  .career-evaluation-image {
+    content: url("/assets/placement-zone-images/career-evaluation-mobile.png");
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .career-evaluation-text {
+    display: none; /* Hide the floating text on mobile */
+  }
+}

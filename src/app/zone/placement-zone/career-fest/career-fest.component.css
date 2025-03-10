@@ -1,0 +1,118 @@
+.career-fest-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px 0;
+  background: linear-gradient(to right, #d2dbff, #f7f9ff, #e7ecff);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 85px;
+  margin-top: -20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #34437a;
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 15px;
+  color: #34437a;
+  margin: 0;
+}
+
+.long-arrow {
+  width: 160px;
+}
+
+.header-icon {
+  max-width: 80px;
+}
+
+.back-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Career Fest Heading */
+.career-fest-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f58634;
+  text-align: center;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Career Fest Image Container */
+.career-fest-image-container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Center the Image */
+.career-fest-image {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Floating Text Box */
+.career-fest-text {
+  position: absolute;
+  bottom: 30px;
+  background: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #34437a;
+  width: 35%;
+  border: 1px solid #2f2854;
+}
+/* Mobile View (Up to 768px width) */
+@media (max-width: 768px) {
+  /* Change Image for Mobile */
+  .career-fest-image {
+    content: url("/assets/placement-zone-images/career-fest-mobile.png");
+    max-width: 90%;
+  }
+
+  /* Hide Floating Heading */
+  .career-fest-heading {
+    display: none;
+  }
+
+  /* Hide Floating Text */
+  .career-fest-text {
+    display: none;
+  }
+}

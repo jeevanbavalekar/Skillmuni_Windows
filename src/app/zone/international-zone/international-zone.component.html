@@ -1,0 +1,39 @@
+<div class="international-zone-container" *ngIf="showInternationalZone">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()" class="back-button" />
+        <div class="title-container">
+            <h1>International Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+        </div>
+        <img src="assets/icons/world-icon.png" alt="World Icon" class="header-icon" />
+    </div>
+
+    <div class="section-header">
+        <h2 class="section-title">
+            Explore places for<span class="highlight"> Higher Studies</span>
+        </h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="quick-access">
+        <h2 class="quick-access-title">Quick Access</h2>
+        <div class="quick-access-list">
+            <div *ngFor="let place of places.slice(4, 10)" class="quick-access-item" (click)="navigateToPlace(place)"
+                [routerLink]="'/international-zone/' + place.name">
+                {{ place.name }}
+            </div>
+        </div>
+    </div>
+
+    <div class="international-zone">
+        <div class="card-container">
+            <div class="card" *ngFor="let place of places" (click)="navigateToPlace(place)">
+                <div class="image-container">
+                    <img [src]="place.image" [alt]="place.name" />
+                </div>
+                <div class="card-title">{{ place.name }}</div>
+            </div>
+        </div>
+    </div>
+</div>

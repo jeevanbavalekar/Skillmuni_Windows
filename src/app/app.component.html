@@ -1,0 +1,14 @@
+<div class="container">
+  <app-header *ngIf="showHeaderFooter"></app-header>
+  <app-loader></app-loader>
+
+  <!-- Content -->
+  <router-outlet></router-outlet>
+
+  <!-- Copyright Message at the bottom -->
+  <div class="copyright-container" *ngIf="showHeaderFooter">
+    <p><span class="highlight">©TGC Technologies Pvt Ltd</span></p>
+  </div>
+
+  <app-footer *ngIf="showHeaderFooter"></app-footer>
+</div>

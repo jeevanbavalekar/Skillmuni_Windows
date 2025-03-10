@@ -1,0 +1,494 @@
+.job-profile-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px 0;
+  background: linear-gradient(to right, #d2dbff, #f7f9ff, #e7ecff);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 85px;
+  margin-top: -20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #34437a;
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 15px;
+  color: #34437a;
+  margin: 0;
+}
+
+.long-arrow {
+  width: 160px;
+}
+
+.header-icon {
+  max-width: 80px;
+}
+
+.back-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Animation for Job Profile Intro */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* job-profile-intro */
+.job-profile-intro {
+  display: flex;
+  align-items: center; /* Vertically centers items */
+  justify-content: center; /* Horizontally centers items */
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  margin: 20px auto; /* Centers the div horizontally */
+  width: 40%; /* Adjust width for responsiveness */
+  border: 1px solid #2f2854;
+  gap: 20px; /* Adds spacing between image and text */
+
+  /* Apply Animation */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Center image and content */
+.intro-image,
+.intro-content {
+  display: flex;
+  align-items: center; /* Vertically centers content */
+  justify-content: center; /* Centers text/image horizontally */
+}
+
+.intro-image img {
+  width: 50px; /* Adjust image size */
+  height: auto;
+}
+
+.intro-content {
+  text-align: left;
+}
+
+.intro-content p {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0; /* Removes unwanted margin */
+}
+
+.primary {
+  color: #34437a;
+}
+
+.text-highlight {
+  color: #f58634;
+  font-weight: 600;
+}
+
+/* Job Profile Form */
+.job-profile-form {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1350px;
+  border: 1px solid #2f2854;
+}
+
+/* Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #34437a;
+  margin-bottom: 5px;
+}
+
+.highlight {
+  color: #f58634;
+  font-weight: 600;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #2f2854;
+  appearance: none;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+
+.dropdown .material-icons {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+}
+
+/* Experience Fields */
+.experience-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.experience-fields select {
+  flex: 1;
+}
+
+/* Text Input */
+input[type="text"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid#2F2854;
+  font-size: 14px;
+}
+
+/* Upload Box */
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2f2854;
+  cursor: pointer;
+}
+
+.upload-box label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.upload-box .material-icons {
+  font-size: 20px;
+}
+
+/* CV Upload Section */
+.cv-upload {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cv-actions .edit,
+.cv-actions .view {
+  font-size: 12px;
+  cursor: pointer;
+  color: #34437a;
+  text-decoration: underline;
+}
+
+.create-cv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-cv button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #34437a;
+}
+
+.create-cv .material-icons {
+  font-size: 18px;
+}
+
+/* Save Button */
+.save-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.save-button button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f58634;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px #d9d9d9;
+}
+
+.save-button .material-icons {
+  font-size: 20px;
+}
+
+/* CV Upload Container - Aligns all three boxes in one row */
+.cv-upload-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px;
+}
+
+/* Each CV Upload Box */
+.cv-upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #2f2854;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #34437a;
+  width: 100%;
+  padding: 12px;
+}
+
+/* Left Section: Text */
+.cv-left {
+  flex: 1;
+}
+
+/* Right Section: Upload Icon & Actions */
+.cv-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Upload Icon */
+.upload-icon {
+  font-size: 22px;
+  color: #34437a;
+  cursor: pointer;
+}
+
+/* Edit and View Options */
+.cv-actions {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #34437a;
+}
+
+/* Divider Line */
+.divider {
+  width: 1px;
+  height: 16px;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+/* Edit and View Text */
+.cv-actions .edit,
+.cv-actions .view {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Show Score Button */
+.submit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ff9800;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 5px 10px;
+  width: 130px;
+}
+
+.submit-btn:hover {
+  background: #e68900;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.submit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submit-btn:hover .submit-icon {
+  transform: translateX(10px);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 17px;
+  }
+
+  .long-arrow {
+    width: 120px;
+  }
+
+  .header-icon {
+    max-width: 70px;
+  }
+
+  .cv-upload-container {
+    grid-template-columns: 1fr; /* Stack elements in a single column */
+  }
+
+  .cv-upload-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .cv-left {
+    text-align: left;
+  }
+
+  .cv-right {
+    gap: 10px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .cv-upload {
+    flex-direction: column;
+  }
+
+  .save-button button {
+    width: 100%;
+  }
+  .job-profile-intro {
+    flex-direction: row;
+    text-align: center;
+    width: 90%; /* Makes it wider on mobile for better spacing */
+  }
+
+  .intro-image img {
+    width: 50px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+  .intro-content p {
+    font-size: 12px;
+  }
+  .job-profile-form {
+    padding: 15px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+  select {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .upload-box {
+    padding: 8px;
+  }
+
+  .upload-box label {
+    font-size: 12px;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

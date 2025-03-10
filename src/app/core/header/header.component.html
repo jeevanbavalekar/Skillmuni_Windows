@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-nav">
+    <div class="container-fluid">
+        <!-- Left Section: Logo -->
+        <div class="left-section d-flex align-items-center">
+            <img src="assets/icons/skillmuni-desktop-icon.png" routerLink="/home" alt="Skillmuni Logo"
+                class="logo-left desktop-only" />
+            <img src="assets/icons/skillmuni-mobile-icon.png" routerLink="/home" alt="Skillmuni Logo"
+                class="logo-left mobile-only" />
+        </div>
+
+        <!-- Center Section: Navigation Links -->
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active': activeLink === 'home'}" (click)="setActiveLink('home')"
+                    routerLink="/home">
+                    <i class="material-icons">home</i>
+                    <span>My Home</span>
+                </a>
+                <div class="underline" *ngIf="activeLink === 'home'"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active': activeLink === 'leaderboard'}"
+                    (click)="setActiveLink('leaderboard')" routerLink="/leaderboard">
+                    <i class="material-icons">leaderboard</i>
+                    <span>Leaderboard</span>
+                </a>
+                <div class="underline" *ngIf="activeLink === 'leaderboard'"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active': activeLink === 'dashboard'}"
+                    (click)="setActiveLink('dashboard')" routerLink="/dashboard">
+                    <i class="material-icons">dashboard</i>
+                    <span>Dashboard</span>
+                </a>
+                <div class="underline" *ngIf="activeLink === 'dashboard'"></div>
+            </li>
+        </ul>
+
+
+        <!-- Right Section: Avatar and Profile Icon -->
+        <div class="right-section d-flex align-items-center">
+            <div class="right-icons">
+                <img src="assets/icons/chat-icon.png" alt="Profile Icon" class="profile-icon" />
+                <img [src]="userProfileImg" alt="" class="name-logo" routerLink="/your-profile">
+            </div>
+            &nbsp;&nbsp;
+            <i class="material-icons" style="cursor: pointer;" (click)="signOut()">logout</i>
+        </div>
+    </div>
+</nav>

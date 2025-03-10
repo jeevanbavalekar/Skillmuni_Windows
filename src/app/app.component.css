@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+  padding: 60px 0;
+  background-color: #f5f7fb;
+}
+
+/* Ensure router-outlet takes all available space */
+router-outlet {
+  flex-grow: 1;
+}
+
+/* Hide footer by default */
+app-footer {
+  display: none;
+}
+
+/* Copyright Section */
+.copyright-container {
+  width: 100%;
+  text-align: end;
+  font-weight: 500;
+  color: #2f2854;
+  font-size: 10px;
+  padding: 5px 0;
+  background: #f6f8ff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Highlight color for "The Gamification Company" */
+.copyright-container .highlight {
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.copyright-container p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Show footer only on smaller screens */
+@media (max-width: 768px) {
+  app-footer {
+    display: block;
+  }
+
+  /* Adjust copyright padding for mobile screens */
+  .copyright-container {
+    font-size: 7px;
+  }
+
+  .copyright-container {
+    position: fixed; /* Keeps it always visible */
+    bottom: 43px;
+    z-index: 1001;
+  }
+}

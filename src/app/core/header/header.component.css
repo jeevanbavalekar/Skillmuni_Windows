@@ -1,0 +1,164 @@
+/* General Navbar Styling */
+.navbar {
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(to bottom, #f6f8ff, #ffffff) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding-bottom: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+.container-fluid {
+  padding: 0;
+  width: 100%;
+}
+
+/* Left Section: Logo */
+.logo-left {
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* Center Section: Navigation Links */
+.navbar-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.underline {
+  position: absolute;
+  background-color: #f7931e;
+  border-radius: 5px;
+  bottom: -13px;
+  width: 82%;
+  height: 6px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #6f79a2;
+}
+
+.right-icons {
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e67c00; /* Highlight on hover */
+}
+
+.nav-link i {
+  margin-right: 2px; /* Space between icon and text */
+  font-size: 20px;
+}
+
+.nav-link span {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Active Link Styles */
+.nav-link.active i,
+.nav-link.active span {
+  color: #f7931e; /* Active color */
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.name-logo {
+  width: 40px;
+  height: 40px;
+  background-color: #2c3e50;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 3px;
+}
+
+/* Navbar Shadow */
+.shadow-nav {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-icons img {
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+  .logo-left {
+    height: 40px;
+  }
+  .navbar-nav {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .nav-link i {
+    font-size: 18px;
+  }
+
+  .profile-icon {
+    height: 45px;
+  }
+
+  .name-logo {
+    height: 35px;
+    width: 35px;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}

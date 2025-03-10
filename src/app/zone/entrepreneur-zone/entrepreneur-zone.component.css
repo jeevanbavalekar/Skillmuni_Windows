@@ -1,0 +1,308 @@
+/* General Styles */
+.entrepreneur-zone-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px 0;
+  background: linear-gradient(to right, #d2dbff, #f7f9ff, #e7ecff);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 85px;
+  margin-top: -20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #34437a;
+  margin: 0;
+}
+
+.long-arrow {
+  width: 160px;
+}
+
+.header-icon {
+  max-width: 80px;
+}
+
+.back-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Section Titles */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  margin-bottom: 0;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #34437a;
+  margin: 0;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #f7931e;
+}
+
+.highlight {
+  color: #f7931e;
+}
+
+/* Entrepreneurial Quotient Banner */
+
+.Entrepreneur {
+  width: 50%;
+  margin-bottom: 30px;
+}
+.eq-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.eq-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.eq-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.eq-content {
+  transform: scale(1.05);
+  background: linear-gradient(to bottom, #ffffff, #f0f3ff);
+}
+
+.eq-image {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.eq-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f7931e;
+}
+
+/* Opportunities Section */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 15px;
+}
+
+.opportunity-card {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to bottom, #ffffff, #f0f3ff);
+}
+
+.opportunity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.opportunity-image {
+  width: 40%;
+  height: auto;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.opportunity-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #34437a;
+}
+
+.opportunity-description {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+/* Explore Button */
+.card-explore {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #fff4e6;
+  border-top: 4px solid #f7931e;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 100%;
+  margin-top: auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-explore .explore-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f7931e;
+}
+
+/* Ad Section */
+.ad-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 20px;
+  position: absolute;
+  top: 170px;
+}
+
+.ad {
+  width: 250px;
+  height: 250px;
+  background-color: #eceffa;
+  border: 1px solid #6b6b8d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #34345b;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.ad-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #34345b;
+  border: 1px solid #34345b;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ad-close:hover {
+  background-color: #d8dae5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 17px;
+  }
+
+  .long-arrow {
+    width: 120px;
+  }
+
+  .opportunity-card {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .Entrepreneur {
+    width: 100%;
+  }
+
+  .eq-content {
+    height: 175px;
+  }
+
+  .eq-title {
+    font-size: 12px;
+  }
+
+  .ad-container {
+    display: none;
+  }
+  .opportunity-title {
+    font-size: 14px;
+  }
+  .card-explore {
+    padding: 5px 10px;
+  }
+
+  .card-explore .explore-text {
+    font-size: 12px;
+  }
+
+  .opportunity-description {
+    font-size: 11px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

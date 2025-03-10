@@ -1,0 +1,64 @@
+<div class="register-container">
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" class="back-button" (click)="onBackClick()" />
+        <div class="title-container">
+            <h1>International Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+            <h2>Register interest</h2>
+        </div>
+        <img src="assets/icons/candle-icon.png" alt="Category Icon" class="header-icon" />
+    </div>
+
+    <div *ngIf="isFormSubmitted; else registrationForm" class="success-screen">
+        <div class="success-content">
+            <img src="assets/registration-bg.png" alt="registration-bg" class="registration-bg" />
+            <h2>Interest received!</h2>
+            <h3>We'll be in touch soon.</h3>
+            <p>Meanwhile, feel free to explore our International Zone.</p>
+            <button class="explore-button" routerLink="/international-zone">
+                Explore &#10132;
+            </button>
+        </div>
+    </div>
+    <ng-template #registrationForm>
+        <div class="form-container">
+            <h3>Your Choice, Our Guidance</h3>
+            <form #registrationForm="ngForm" (ngSubmit)="submitForm(registrationForm)">
+                <div class="form-group">
+                    <p>
+                        Hello, {{ userName }}! Just mention your interest, and we'll get back to you at
+                        <span class="highlight">{{ email }}</span>.
+                    </p>
+        
+                    <label for="inquiry">What's your inquiry about?</label>
+                    <div class="custom-dropdown" (click)="toggleDropdown()" (document:click)="closeDropdown($event)">
+                        <div class="selected-option">
+                            {{ selectedInquiryLabel || 'Select your Inquiry' }}
+                        </div>
+                        <div class="dropdown-arrow" [class.open]="isDropdownOpen">&#9662;</div>
+                        <ul class="dropdown-options" *ngIf="isDropdownOpen">
+                            <li *ngFor="let option of inquiries" (click)="selectInquiry(option, $event)">
+                                <input type="radio" name="inquiry" [value]="option.value" 
+                                       [checked]="selectedInquiry === option.value" />
+                                {{ option.label }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div *ngIf="!selectedInquiry && isFormSubmitted" class="error-text">Please select an inquiry.</div>
+        
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" [(ngModel)]="message" 
+                              #messageInput="ngModel" required 
+                              placeholder="Type about your interest here..."></textarea>
+                    <div *ngIf="messageInput.invalid && messageInput.touched" class="error-text">Message is required.</div>
+                </div>
+        
+                <button type="submit" [disabled]="!selectedInquiry || registrationForm.invalid">Send my wish &#10132; </button>
+            </form>
+            <div class="illustration">
+                <img src="assets/icons/illustration.png" alt="Illustration">
+            </div>
+        </div>   
+    </ng-template>
+
+</div>

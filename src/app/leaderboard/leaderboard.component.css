@@ -1,0 +1,268 @@
+/* Container */
+.leaderboard-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  background: linear-gradient(to right, #f7f9ff, #e7ecff, #c9d4ff);
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #34437a;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #f7931e;
+}
+
+/* tabs */
+.tabs-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #34437a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Adjust width */
+}
+
+.tab {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #34437a;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+}
+
+.tab.active {
+  font-weight: bold;
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background-color: #f7931e;
+  border-radius: 5px;
+}
+
+/* Profile Section */
+.profile-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.name-logo {
+  width: 80px;
+  height: 80px;
+  background: #34437a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.username {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #34437a;
+}
+
+/* Ranking Section */
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-left: 2px solid #f89c52;
+}
+/* table */
+.leaderboard-table {
+  width: 90%;
+  margin: auto;
+}
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #fff7ed, #ffead1, #ffd19a);
+  padding: 5px;
+  font-weight: bold;
+  color: #f58634;
+  border-radius: 10px 10px 0 0;
+  border: 2px solid #f58634;
+}
+
+.header-item {
+  text-align: center;
+  flex: 1;
+}
+
+.header-item.rank {
+  text-align: left;
+  flex: 0.5;
+}
+
+.header-item.name {
+  text-align: left;
+  flex: 2;
+}
+
+.header-item.icon img {
+  width: 35px;
+  height: auto;
+}
+
+/* Leaderboard Rows */
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  background: #f5f7fb;
+  border-bottom: 1px solid #e3e6f0;
+}
+
+.leaderboard-row:nth-child(odd) {
+  background: #f0f4ff;
+}
+
+.leaderboard-row.highlight {
+  background: #34437a;
+  color: white;
+  border-radius: 5px;
+}
+
+.row-item {
+  text-align: center;
+  flex: 1;
+}
+
+.row-item.rank {
+  text-align: left;
+  flex: 0.5;
+}
+
+.row-item.name {
+  text-align: left;
+  flex: 2;
+}
+
+.row-item.score {
+  font-weight: bold;
+}
+/* Rank Header */
+.rank-header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.banner {
+  background: #f89c52;
+  color: white;
+  font-weight: bold;
+  padding: 5px 15px;
+  font-size: 12px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 100%;
+  width: 10px;
+  height: 10px;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+/* badge */
+.badge {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.badge img {
+  width: 45px;
+}
+
+/* Points */
+.points {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.points span {
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #d3d3d3;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #34437a;
+}
+
+@media (max-width: 768px) {
+  .tabs-container {
+    width: 350px;
+  }
+  .header-item.name {
+    padding-left: 5px;
+    font-size: 13px;
+  }
+  .header-item.rank {
+    font-size: 13px;
+    padding-left: 5px;
+  }
+}

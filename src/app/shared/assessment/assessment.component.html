@@ -1,0 +1,126 @@
+<div class="assessment-container">
+  <!-- header -->
+  <div class="header">
+    <img
+      src="assets/icons/back-arrow.png"
+      alt="Back Icon"
+      class="back-button"
+      (click)="onBackClick()"
+    />
+    <div class="title-container">
+      <h1>{{ subtitle }}</h1>
+      <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+      <h2>{{ submitted ? "YOUR SKILL SCORE" : "QUIZ TIME" }}</h2>
+    </div>
+    <img
+      src="assets/icons/category-icon.png"
+      alt="Category Icon"
+      class="header-icon"
+    />
+  </div>
+
+  <!-- Total Stats Section -->
+  <div class="total-stats">
+    <div class="stat-box">
+      <img src="assets/icons/bulb-icon.png" alt="Quiz Icon" class="stat-icon" />
+      <p>
+        <span>Quiz: 1 <span style="color: #f7931e">/106 SOLVED</span></span>
+      </p>
+    </div>
+    <div class="stat-box">
+      <img
+        src="assets/icons/credits-icon.png"
+        alt="credits Icon"
+        class="stat-icon"
+      />
+      <p>
+        <span>Credits: 3<span style="color: #f7931e"> EARNED</span></span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Score Result Section -->
+  <div *ngIf="submitted" class="score-result">
+    <div class="score-header">
+      <span>Your Score</span>
+    </div>
+    <div class="score-content">
+      <img
+        src="assets/icons/credits-icon.png"
+        alt="Credits Icon"
+        class="score-icon"
+      />
+      <span class="score-text"
+        >Credits: {{ score }} <span class="score-earned">Earned</span></span
+      >
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div *ngFor="let question of questions; let i = index" class="question-card">
+    <!-- Question Number -->
+    <div class="question-number">
+      {{ i + 1 }}
+    </div>
+
+    <!-- Question Text -->
+<!-- Question Text -->
+<div class="question-text"><b>Q.</b> {{ question.text }}</div>
+
+<!-- Options -->
+<div class="options-container">
+  <label *ngFor="let option of question.options" class="option"
+    [ngClass]="{
+      selected: question.selectedOption === option.text,
+      correct: submitted && option.isCorrect === 1 && question.selectedOption === option.text,
+      wrong: submitted && option.isCorrect === 0 && question.selectedOption === option.text,
+      'correct-answer': submitted && option.isCorrect === 1
+    }"
+  >
+    <span class="option-text">{{ option.text }}</span>
+
+    <!-- Show Correct/Incorrect status -->
+    <span
+      *ngIf="submitted && question.selectedOption === option.text"
+      class="answer-indicator"
+      [ngClass]="{
+        correct: option.isCorrect === 1,
+        incorrect: option.isCorrect === 0
+      }"
+    >
+      {{ option.isCorrect === 1 ? "Correct" : "Incorrect" }}
+    </span>
+
+    <input
+      type="radio"
+      [name]="'question-' + i"
+      [value]="option.text"
+      [(ngModel)]="question.selectedOption"
+      [disabled]="submitted"
+    />
+  </label>
+</div>
+
+
+    <!-- Show the correct answer if the user selected the wrong one -->
+    <!-- <div
+      *ngIf="submitted && question.answerStatus === 'wrong'"
+      class="correct-answer-display"
+    >
+      Correct Answer: <b>{{ question.correctAnswer }}</b>
+    </div> -->
+  </div>
+
+  <!-- Show Score Button -->
+<div class="submit-container">
+  <button class="submit-btn"
+    (click)="submitAnswers()"
+    [disabled]="!isAllQuestionsAnswered() && !submitted"
+    [ngClass]="{'disabled-btn': !isAllQuestionsAnswered() && !submitted}">
+    {{ submitted ? "Continue" : "Show Score!" }}
+    <span class="submit-icon">&#10132;</span>
+  </button>
+</div>
+
+
+</div>

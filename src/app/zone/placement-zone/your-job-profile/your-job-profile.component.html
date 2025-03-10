@@ -1,0 +1,151 @@
+<div class="job-profile-container">
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()" class="back-button" />
+        <div class="title-container">
+            <h1>Placement Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+            <h2>{{ title | uppercase }}</h2>
+        </div>
+        <img src="assets/icons/job-icon.png" alt="Category Icon" class="header-icon" />
+    </div>
+
+    <div class="job-profile-intro">
+        <div class="intro-image">
+            <img src="assets/chat-ai.png" alt="Job Genie">
+        </div>
+        <div class="intro-content">
+            <p>
+                <span class="primary">Hi {{name}}! By Filling in the form below you help us find jobs tailored to
+                    you!</span><br>
+                <span class="text-highlight">Let’s make it awesome ;)</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="job-profile-form">
+        <div class="form-grid">
+            <!-- Row 1 -->
+            <div class="form-group">
+                <label>1. What's your job <span class="highlight">industry?</span></label>
+                <div class="dropdown">
+                    <select>
+                        <option>Choose from the list</option>
+                    </select>
+                    <span class="material-icons">expand_more</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>2. What's your job <span class="highlight">role?</span></label>
+                <div class="dropdown">
+                    <select>
+                        <option>Choose from the list</option>
+                    </select>
+                    <span class="material-icons">expand_more</span>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-group">
+                <label>3. What's your job <span class="highlight">location?</span></label>
+                <div class="dropdown">
+                    <select>
+                        <option>Choose from the list</option>
+                    </select>
+                    <span class="material-icons">expand_more</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>4. How much <span class="highlight">work experience</span> do you have?</label>
+                <div class="experience-fields">
+                    <select>
+                        <option>Year</option>
+                    </select>
+                    <select>
+                        <option>Month</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="form-group">
+                <label>5. Type in your <span class="highlight">key Skills.</span></label>
+                <input type="text" placeholder="Skill 1, Skill 2,.....">
+            </div>
+            <div class="form-group">
+                <label>6. Upload your <span class="highlight">Certificates?</span></label>
+                <div class="upload-box">
+                    <input type="file" hidden id="upload-cert">
+                    <label for="upload-cert">Upload here</label>
+                    <span class="material-icons">cloud_upload</span>
+                </div>
+            </div>
+
+            <!-- Row 5: CV Upload -->
+            <div class="form-group full-width">
+                <label>7. Upload your <span class="highlight">CV.</span></label>
+                <div class="cv-upload-container">
+                    <!-- Upload CV -->
+                    <div class="cv-upload-box">
+                        <div class="cv-left">
+                            <span>Upload CV</span>
+                        </div>
+                        <div class="cv-right">
+                            <span class="material-icons upload-icon">upload</span>
+                            <span class="divider"></span>
+                            <div class="cv-actions">
+                                <span class="edit">Edit</span>
+                                <span class="divider"></span>
+                                <span class="view">View</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create CV -->
+                    <div class="cv-upload-box">
+                        <div class="cv-left">
+                            <span>Create CV</span>
+                        </div>
+                        <div class="cv-right">
+                            <span class="material-icons upload-icon">note_add</span>
+                            <span class="divider"></span>
+                            <div class="cv-actions">
+                                <span class="edit">Edit</span>
+                                <span class="divider"></span>
+                                <span class="view">View</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Video CV -->
+                    <div class="cv-upload-box">
+                        <div class="cv-left">
+                            <span>Create Video CV</span>
+                        </div>
+                        <div class="cv-right">
+                            <span class="material-icons upload-icon">videocam</span>
+                            <span class="divider"></span>
+                            <div class="cv-actions">
+                                <span class="edit">Edit</span>
+                                <span class="divider"></span>
+                                <span class="view">View</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="submit-container">
+            <button class="submit-btn">
+                Save &nbsp;&nbsp;&nbsp;<span class="submit-icon"> &#10132;</span>
+            </button>
+        </div>
+    </div>
+
+
+
+</div>

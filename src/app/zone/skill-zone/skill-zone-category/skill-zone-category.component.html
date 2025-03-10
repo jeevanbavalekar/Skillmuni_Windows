@@ -1,0 +1,55 @@
+<div class="category-container">
+    <div class="header">
+        <img src="assets/icons/back-arrow.png" alt="Back Icon" (click)="onBackClick()"class="back-button" />
+        <div class="title-container">
+            <h1>Skill Zone</h1>
+            <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+            <h2>{{ title | uppercase }}</h2>
+        </div>
+        <img src="assets/icons/category-icon.png" alt="Category Icon" class="header-icon" />
+    </div>
+
+    <!-- Total Stats Section -->
+    <div class="total-stats">
+        <div class="stat-box">
+            <img src="assets/icons/bulb-icon.png" alt="Quiz Icon" class="stat-icon" />
+            <p>Total<br><span>Quiz: 1 <span style="color: #f7931e;">/106 SOLVED</span></span></p>
+        </div>
+
+        <div class="stat-box">
+            <img src="assets/icons/credits-icon.png" alt="credits Icon" class="stat-icon" />
+            <p>Total<br><span>Credits: 3<span style="color: #f7931e;"> EARNED</span></span></p>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+        <div class="card" *ngFor="let card of learnAndPlayCards"
+            (click)="fetchBriefListWithAcademy(card.tileCode, id_academic_tile, card.title)">
+            <img [src]="card.image" alt="{{ card.title }}" class="card-image" />
+            <div class="card-content">
+                <p class="card-title">{{ card.title | uppercase }}</p>
+            </div>
+            <div class="card-stats">
+                <div class="card-stat">
+                    <img src="assets/icons/bulb-icon.png" alt="Lightbulb Icon" class="stat-icon" />
+                    <span>{{ card.solved }}</span>
+                </div>
+                <div class="card-stat">
+                    <img src="assets/icons/credits-icon.png" alt="Ball Icon" class="stat-icon" />
+                    <span>{{ card.credits }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="card coming-soon-card">
+            <img src="assets/cards/coming-soon-card.png" alt="Coming Soon" class="coming-soon-image" />
+        </div>
+
+    </div>
+    <div class="ad-container" *ngIf="showAd">
+        <div class="ad">
+            AD PLACEHOLDER
+            <span class="ad-close" (click)="hideAd()">✕</span>
+        </div>
+    </div>
+</div>

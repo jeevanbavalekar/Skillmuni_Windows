@@ -1,0 +1,360 @@
+/* Main Container */
+.main-container {
+  width: 100%;
+  min-height: 100vh; /* Ensure full height */
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
+}
+/* Welcome Section */
+.welcome-section {
+  padding: 45px 4px 0 4px;
+  margin-top: -35px;
+  background: linear-gradient(to right, #f7f9ff, #e7ecff, #c9d4ff);
+}
+
+/* Greeting */
+.greeting {
+  padding-left: 10px;
+  margin-bottom: -20px;
+  margin-top: 10px;
+}
+
+.greeting h1 {
+  font-size: 25px;
+  color: #34437a;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.greeting p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #677193;
+}
+
+.greeting img {
+  position: relative;
+  bottom: 26px;
+  width: 190px;
+  left: 110px;
+}
+
+/* Zone Container */
+.zone-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center zones */
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.zone-container .zone {
+  background-color: #ffffff;
+  border: 1.5px solid #34437a;
+  padding: 12px;
+  position: relative;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex: 1 1 calc(33.33% - 20px);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.zone-container .zone:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.zone h2 {
+  font-size: 20px;
+  color: #34437a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.zone-description {
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  text-align: start;
+  width: 100%;
+  height: 90px;
+}
+
+.zone p {
+  font-size: 13px;
+  color: #34437a;
+  margin: 12px 0;
+  background-color: #ffd097;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background-color: #f7931e;
+  border-radius: 5px;
+}
+
+.zone img {
+  width: auto;
+  height: 125px;
+  position: absolute;
+  right: 14px;
+  top: 20px;
+}
+
+.zone .content {
+  max-width: calc(100% - 140px);
+}
+
+.zone-content h2 .arrow {
+  color: #f7931e;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* New Zones Section */
+.new-zones-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f5f7fb;
+  gap: 20px;
+}
+
+.zone-card-container {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.zone-card-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #34437a;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: linear-gradient(to bottom, #ffffff, #f0f3ff);
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #34437a;
+  font-weight: bold;
+  text-align: start;
+  padding-left: 2px;
+}
+
+.see-all-link {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f7931e;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  background-color: #fff0de;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.see-all-link:hover {
+  color: #e67c00;
+  text-decoration-line: underline;
+}
+
+/* Zone Header */
+.zone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.zone-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zone-logo {
+  max-width: 38px;
+  height: auto;
+}
+
+.coming-soon-card img {
+  max-height: 160px;
+  max-width: 150px;
+  margin: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .greeting h1,
+  .greeting p {
+    line-height: 1.2; /* Compact the spacing between lines */
+  }
+  .greeting h1 {
+    font-size: 20px; /* Reduce font size */
+    margin: 0; /* Remove extra margin */
+  }
+
+  .greeting p {
+    font-size: 14px; /* Reduce font size */
+    margin: 0; /* Remove extra margin */
+  }
+
+  .zone-container {
+    gap: 7px;
+  }
+
+  .greeting img {
+    bottom: 10px;
+    left: 80px;
+    width: 135px;
+  }
+  .zone .content {
+    max-width: 100%;
+    height: 135px;
+  }
+
+  .zone-description {
+    display: none;
+  }
+
+  .see-all-link {
+    font-size: 10px;
+  }
+
+  .zone {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+
+  .zone-container {
+    flex-wrap: nowrap; /* Prevents wrapping issues */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    justify-content: flex-start;
+    padding: 10px 5px;
+  }
+  .new-zones-section {
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .zone h2 {
+    font-size: 13px;
+    text-align: start;
+    width: 100%;
+  }
+
+  .zone img {
+    background-color: #ffd097;
+    position: relative;
+    left: 0px;
+    border-radius: 5px;
+    top: 5px;
+  }
+
+  .zone-card-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .coming-soon-card {
+    display: none;
+  }
+
+  .zone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything inside */
+    text-align: center; /* Ensures text aligns properly */
+  }
+  .zone-content img {
+    height: 90px;
+    width: auto;
+    margin: auto;
+    max-width: 90px;
+  }
+
+  .card {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .zone-container .zone {
+    flex: 1 1 100%; /* Make each zone full width */
+    max-width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+  }
+
+  .card p {
+    font-size: 10px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  .zone-header h2 {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+
+  .zone-logo {
+    width: 35px;
+    height: auto;
+  }
+}

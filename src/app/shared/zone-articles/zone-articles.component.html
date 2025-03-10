@@ -1,0 +1,116 @@
+<div class="details-container">
+  <!-- Fixed Header -->
+  <div class="header">
+    <img src="assets/icons/back-arrow.png" alt="Back Icon" class="back-button" (click)="onBackClick()" />
+    <div class="title-container">
+      <h1>{{ title }}</h1>
+      <img src="assets/icons/long-arrow.png" alt="Arrow" class="long-arrow" />
+      <h2>{{ subtitle }}</h2>
+    </div>
+    <img src="assets/icons/category-icon.png" alt="Category Icon" class="header-icon" />
+  </div>
+
+ <!-- Conditionally Show Total Stats or Articles Count -->
+ <ng-container *ngIf="title === 'International Zone' || title === 'Entrepreneur Zone'; else totalStats">
+  <!-- New Articles Count Section -->
+  <div class="total-stats article">
+    <div class="stat-box" style="justify-content: center;">
+      <img src="assets/icons/article-icon.png" alt="Articles Icon" class="stat-icon" />
+      <p>
+        <span>Articles: {{ currentIndex + 1 }} <span style="color: #f7931e">/ {{ articles.length }}</span></span>
+      </p>
+    </div>
+  </div>
+</ng-container>
+
+
+<!-- Existing Total Stats (Hidden if Register Button is Visible) -->
+<ng-template #totalStats>
+  <div class="total-stats">
+    <div class="stat-box">
+      <img src="assets/icons/bulb-icon.png" alt="Quiz Icon" class="stat-icon" />
+      <p>
+        <span>Quiz: {{ currentIndex + 1 }} <span style="color: #f7931e">/ {{ articles.length }}</span></span>
+      </p>
+    </div>
+
+    <div class="stat-box">
+      <img src="assets/icons/credits-icon.png" alt="credits Icon" class="stat-icon" />
+      <p>
+        <span>Credits: 3<span style="color: #f7931e"> EARNED</span></span>
+      </p>
+    </div>
+  </div>
+</ng-template>
+
+
+  <!-- Scrollable Reel Container -->
+  <div #contentContainer class="scroll-container">
+    <ng-container *ngFor="let article of articles; let i = index">
+      <ng-container *ngIf="canAccessArticle(i)">
+        <div [class.active]="currentIndex === i" class="scroll-item">
+          <div class="card">
+            <div class="card-header">
+              <h2>{{ article.articleTitle }}</h2>
+              <div class="article-icons">
+                  <img src="assets/icons/bookmark-icon.png" alt="Bookmark" class="header-article-icon" />
+                  <img src="assets/icons/share-icon.png" alt="Share" class="header-article-icon" />
+              </div>
+          </div>
+            <div class="card-body">
+              <ng-container *ngIf="article.isVideo; else imageTemplate">
+                <iframe [src]="article.articleImage | safeUrl" class="card-image" frameborder="0"></iframe>
+              </ng-container>
+              <ng-template #imageTemplate>
+                <img [src]="article.articleImage" alt="{{ article.articleTitle }}" class="card-image" />
+              </ng-template>
+
+              <div class="card-content">
+                <p>{{ article.articleContent }}</p>
+                <ng-container *ngIf="title === 'International Zone' || title === 'Entrepreneur Zone'; else quizButton">
+                  <button class="test-button quiz-button" (click)="navigateToRegister()">
+                    Register my Interest <span class="submit-icon">&#10132;</span>
+                  </button>
+                </ng-container>
+                
+                <ng-template #quizButton>
+                  <button class="test-button quiz-button" *ngIf="!completedAssessments.has(article.brief_code); else completedButton"
+                    (click)="navigateToTest(article)">
+                    Try the Quiz!
+                    <span class="submit-icon">&#10132;</span>
+                  </button>
+                
+                  <ng-template #completedButton>
+                    <button class="test-button quiz-button" (click)="viewPreviousAssessment(article)">
+                      You did it!
+                      <span class="submit-icon">&#10003;</span>
+                    </button>
+                  </ng-template>
+                </ng-template>
+                
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <p style="cursor: pointer">
+                Please swipe up for more
+                <span class="material-icons">arrow_upward</span>
+              </p>
+              <div class="footer-icons">
+                <span class="material-icons">thumb_up</span>
+                <span class="material-icons">thumb_down</span>
+              </div>
+            </div>
+
+            <!-- Error Popup: Only visible if user has submitted an assessment and tries to scroll -->
+            <!-- Error Popup: Only visible if user tries to scroll down but article is locked -->
+            <div class="error-popup" *ngIf="showPopup">
+              <span class="material-icons error-icon">error_outline</span>
+              Oh ho! You need to try the Quiz first!
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
